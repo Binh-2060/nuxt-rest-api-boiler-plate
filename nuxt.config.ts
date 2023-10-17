@@ -4,10 +4,30 @@ import colors from "vuetify/lib/util/colors";
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ["@invictus.codes/nuxt-vuetify"],
+  modules: ["@invictus.codes/nuxt-vuetify", "@nuxtjs/i18n"],
   devServer: {
     port: 3500,
   },
+
+  i18n: {
+    defaultLocale: "en",
+    lazy: false,
+    strategy: "no_prefix",
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+        iso: "en-EN",
+      },
+      {
+        code: "la",
+        file: "la.json",
+        iso: "la-LA",
+      },
+    ],
+    langDir: "./locales",
+  },
+
   vuetify: {
     vuetifyOptions: {
       icons: {
